@@ -1,19 +1,15 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 // importing and rendering gallery component
-import Gallery from './Gallery'
+import Gallery from './components/Gallery'
 import './App.css'
 
 function App() {
   return (
-    <>
-    <div className="App">
-      <header>
+    <div>
       <h1>Tour Companion App</h1>
-      </header>
       <Gallery/>
     </div>
-    </>
-  )
+  );
 }
 
 export default App;
