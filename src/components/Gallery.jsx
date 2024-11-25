@@ -13,7 +13,7 @@ const Gallery = () => {
         const fetchTours = async () => {
             // fetching from api
             try {
-                const response = await fetch ("https://api.allorigins.win/get?url=https://course-api.com/react-tours-project"); // changing original api link to bypass CORS error 
+                const response = await fetch ("https://api.allorigins.win/get?url=https://course-api.com/react-tours-project"); // changing original api link to bypass the CORS error caused by the provided link (not sure why this happens)
             // checking network response
             if (!response.ok) {
                 throw new Error ('Network response was not okay');
@@ -24,12 +24,12 @@ const Gallery = () => {
 
             // setting data and removing loading status
             setTours(tourData);
-            setLoading(false);
+            setLoading(false); // loading status is no longer true, set to false
 
             // catching for errors
             } catch (err) {
                 setError(err.message)
-                setLoading(false)
+                setLoading(false) 
             }
         };
 
@@ -44,13 +44,13 @@ const Gallery = () => {
     // rendering loading and error states
     if (loading) {
         return <div><h3>Loading tours...</h3></div>
-    }
+    };
 
     if (error) {
         return <div><h3>ERROR: {error} </h3></div>
-    }
+    };
 
- // setting up the format for the gallery/tour outputs (with buttons to show/hide description and remove a tour)
+ // setting up the format for the gallery/tour outputs (with buttons to both show/hide description and remove a tour)
     const TourCard = ({ tour, removeTour }) => {
         const [showMore, setShowMore] = useState(false); 
         return (
@@ -66,7 +66,7 @@ const Gallery = () => {
         );
       };
   
-    // Using .map to create a new array based on the TourCard format 
+    // Using .map to output a new array based on the TourCard format 
     return (
         <div className="gallery-div">
             <h2><em>Recommended Tours For You:</em></h2>
