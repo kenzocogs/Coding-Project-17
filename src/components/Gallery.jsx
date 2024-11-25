@@ -55,13 +55,11 @@ const Gallery = () => {
         const [showMore, setShowMore] = useState(false); 
         return (
           <div className="tour-card">
-            <img src= {tour.image}/>
+            <img className="tour-image" src= {tour.image}/>
             <h2>{tour.name} - <u>${tour.price}</u></h2>
             <p className="tour-description">
               {showMore ? tour.info : `${tour.info.substring(0, 100)}...`} 
-              <button className="read-more" onClick={() => setShowMore((prev) => !prev)}>
-                {showMore ? "Show Less" : "Read More"}
-              </button>   
+              <button className="read-more" onClick={() => setShowMore((prev) => !prev)}> {showMore ? "Show Less" : "Read More"} </button>   
             </p>
             <button className="remove-tour" onClick={() => removeTour(tour.id)}> Not Interested </button>
           </div>
@@ -71,7 +69,7 @@ const Gallery = () => {
     // Using .map to create a new array based on the TourCard format 
     return (
         <div className="gallery-div">
-            <h2>Recommended Tours For You:</h2>
+            <h2><em>Recommended Tours For You:</em></h2>
           {tours.map((tour) => (
             <TourCard key={tour.id} tour={tour} removeTour={removeTour} /> 
           ))}

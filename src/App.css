@@ -33,10 +33,37 @@
   }
 }
 
-.card {
-  padding: 2em;
+/*general body styling */
+body {
+  background-color: #45058d;
+  font-family: Helvetica, Arial, sans-serif
 }
 
-.read-the-docs {
-  color: #888;
+/*visual styling for tour cards */
+.tour-card {
+border-style: double;
+border-radius: 40px;
+border-width: 10px;
+border-color: #CBC3E3;
+padding: 3rem;
+margin-bottom: 40px;
+}
+
+/*styling for tour card images*/
+.tour-image {
+  border-style: solid;
+  border-color: #CBC3E3;
+  border-width: 5px;
+  border-radius: 30px;
+}
+
+/*styling for the "not interested" button */
+.remove-tour {
+  background-color: #8e1600; 
+  margin-left: 40px;
+}
+
+/*slight spacing adjustment to the "read more" button */
+.read-more {
+  margin-left: 5px;
 }

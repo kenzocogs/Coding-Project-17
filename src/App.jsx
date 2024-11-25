@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div>
-      <h1>Tour Companion App</h1>
+      <h1>✦ Tour Companion App ✦</h1>
       <Gallery
       />
     </div>
